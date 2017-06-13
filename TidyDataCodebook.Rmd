@@ -7,7 +7,8 @@ output: html_document
 
 #### This codebook is an update to the existing information supplied by the project regarding the nature and structure of the data. Updates have only been made where data or presentation has changed based on the Tidy Data assignment. 
 
-From the original document with changes marked in **bold**:  
+From the original document with changes marked in **bold**:
+
 **Column1: Participant - integer; range 1-30. Designates the participants in the study. All particpants completed all activities in this study. **
 
 **Column2: Activities - char; range is 1 of 6 possible values. contains the descriptions of the activities performed by each study participant including: 1 WALKING, 2 WALKING_UPSTAIRS, 3 WALKING_DOWNSTAIRS, 4 SITTING, 5 STANDING, 6 LAYING**
