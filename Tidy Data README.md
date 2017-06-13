@@ -187,10 +187,10 @@ Use the following steps:
 
 4) Use write.table to output the data into tidy_data_assign.txt. 
 
-At this point the assignment is complete. To access the data and view the file:
+At this point the assignment is complete. To access the data from your working directory and view the file:
 
-file_path2 = ("Add your file path here")  
-tidy_data <- fread(file.path(file_path2, "tidy_data_assign.txt"), na.strings="NA" )  
+
+tidy_data <- fread(file.path("tidy_data_assign.txt"), na.strings="NA" )  
 View(tidy_data)
 
 Citations:  
