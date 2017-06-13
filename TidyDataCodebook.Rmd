@@ -1,0 +1,60 @@
+---
+title: "Tidy Data Codebook"
+author: "Greg Small"
+date: "June 12, 2017"
+output: html_document
+---
+
+#### This codebook is an update to the existing information supplied by the project regarding the nature and structure of the data. Updates have only been made where data or presentation has changed based on the Tidy Data assignment. 
+
+From the original document with changes marked in **bold**:  
+**Column1: Participant - integer; range 1-30. Designates the participants in the study. All particpants completed all activities in this study. **
+
+**Column2: Activities - char; range is 1 of 6 possible values. contains the descriptions of the activities performed by each study participant including: 1 WALKING, 2 WALKING_UPSTAIRS, 3 WALKING_DOWNSTAIRS, 4 SITTING, 5 STANDING, 6 LAYING**
+        
+**Columns3 through 91: Numeric. Calculated mean of measurement data; range prior to mean calculation was normalized between 1 and -1, so all mean calculations necessarily fall within that range. Summary level mean calculation collapsing multiple measures per participant/activity.  Characteristics:**
+
+The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
+
+Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). 
+
+Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signals). 
+
+These signals were used to estimate variables of the feature vector for each pattern:  
+'-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
+
+**Mean of means and mean of standard deviations are calculated from the group of observations for each measure across each axis (X, Y and Z) and the source data is omitted in this Tidy Data subset. **
+
+**Data for all of the following (for X, Y and Z where appropriate) are numeric:**
+
+* tBodyAcc-XYZ
+* tGravityAcc-XYZ
+* tBodyAccJerk-XYZ
+* tBodyGyro-XYZ
+* tBodyGyroJerk-XYZ
+* tBodyAccMag
+* tGravityAccMag
+* tBodyAccJerkMag
+* tBodyGyroMag
+* tBodyGyroJerkMag
+* fBodyAcc-XYZ
+* fBodyAccJerk-XYZ
+* fBodyGyro-XYZ
+* fBodyAccMag
+* fBodyAccJerkMag
+* fBodyGyroMag
+* gravityMean
+* tBodyAccMean
+* tBodyAccJerkMean
+* tBodyGyroMean
+* tBodyGyroJerkMean
+* fBodyGyroJerkMag
+
+The set of variables that were estimated from these signals are: 
+
+* mean(): Mean value
+* std(): Standard deviation
+
+**Remaining measurements in this list are removed from current data set, which focused only on mean and standard deviation.**
+
+
