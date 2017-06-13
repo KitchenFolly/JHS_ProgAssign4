@@ -11,27 +11,27 @@ library(readr)
 # (or, if you do, remove the "train" and "test" file folder designations below)
 
 # read in training files and create a row index in each for merging
-subject_train <- fread(file.path("train", "subject_train.txt"), na.strings="NA" )
+subject_train <- fread(file.path("UCI HAR Dataset\\train", "subject_train.txt"), na.strings="NA" )
 subject_train$row_index <- as.numeric(rownames(subject_train))
 
-X_train <- fread(file.path("train", "X_train.txt"), na.strings="NA" )
+X_train <- fread(file.path("UCI HAR Dataset\\train", "X_train.txt"), na.strings="NA" )
 X_train$row_index <- as.numeric(rownames(X_train))
 
-y_train <- fread(file.path("train", "y_train.txt"), na.strings="NA" )
+y_train <- fread(file.path("UCI HAR Dataset\\train", "y_train.txt"), na.strings="NA" )
 y_train$row_index <- as.numeric(rownames(y_train))
 
 # read in test files and create a row index in each for merging
-subject_test <- fread(file.path("test", "subject_test.txt"), na.strings="NA" )
+subject_test <- fread(file.path("UCI HAR Dataset\\test", "subject_test.txt"), na.strings="NA" )
 subject_test$row_index <- as.numeric(rownames(subject_test))
 
-X_test <- fread(file.path("test", "X_test.txt"), na.strings="NA" )
+X_test <- fread(file.path("UCI HAR Dataset\\test", "X_test.txt"), na.strings="NA" )
 X_test$row_index <- as.numeric(rownames(X_test))
 
-y_test <- fread(file.path("test", "y_test.txt"), na.strings="NA" )
+y_test <- fread(file.path("UCI HAR Dataset\\test", "y_test.txt"), na.strings="NA" )
 y_test$row_index <- as.numeric(rownames(y_test))
 
 # create a features df we can use later for column names
-features <- fread(file.path("features.txt"), na.strings="NA" )
+features <- fread(file.path("UCI HAR Dataset\\features.txt"), na.strings="NA" )
 
 # merge the 3 training data files into one
 train_merge <- merge(merge(subject_train, y_train, by = "row_index", all = TRUE), X_train, by = "row_index", all = TRUE)
@@ -67,6 +67,8 @@ rm(create_index) # clean up create_index
 # 1 WALKING, 2 WALKING_UPSTAIRS, 3 WALKING_DOWNSTAIRS, 4 SITTING, 5 STANDING, 6 LAYING
 
 # change column from numeric to character to make substitution possible
+master$index2 <- parse_character(master$index2)
+
 # make the substitutions
 master$index2[master$index2 == "6"] <- "laying"
 master$index2[master$index2 == "5"] <- "standing"
